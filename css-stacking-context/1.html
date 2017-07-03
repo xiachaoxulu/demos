@@ -28,8 +28,14 @@
 
 <body>
     <div id="div1"></div>
-    <div></div>
+    <div id="div2"></div>
     <h1>为什么第二个div被第一个蓝色的div盖住</h1>
+    <button onClick="changeFlow()" style="padding:5px;">切换流布局</button>
+    <script>
+        function changeFlow() {
+            document.querySelector("#div2").style.position = "relative"
+        }
+    </script>
 </body>
 
 </html>

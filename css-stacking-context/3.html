@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #div1 {
+            position: fixed;
+            width: 100px;
+            height: 200px;
+            background: wheat;
+        }
+
+        #div2 {
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            width: 100px;
+            height: 200px;
+            z-index: 99;
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="position:absolute">
+        <div id="div2"></div>
+    </div>
+    <div id="div1"></div>
+
+</body>
+
+</html>
