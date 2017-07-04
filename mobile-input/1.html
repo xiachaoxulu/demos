@@ -31,9 +31,23 @@
             background: red;
         }
     </style>
+    <script>
+        function info() {
+            var div1 = document.querySelector("#div1");
+            var position = window.getComputedStyle(div1, null).getPropertyValue('position')
+            "fixediv1"
+            var bottom = window.getComputedStyle(div1, null).getPropertyValue('bottom')
+            "0px"
+            var height = window.innerHeight;
+            var bodyheight = document.body.clientHeight;
+            alert('position=>' + position + ',bottom=>' + bottom + ",innerHeight=>" + height + ",bodyheight=>" +
+                bodyheight)
+        }
+    </script>
 </head>
 
 <body>
+    <button style="padding:5px;background-color:wheat;position:fixed;" onClick="info()">测试</button>
     <p>11111</p>
     <p>11111</p>
     <p>11111</p>
@@ -118,7 +132,7 @@
     <p>22222</p>
     <p>44444</p>
 
-    <div>
+    <div id="div1">
         <input type="text">
     </div>
 </body>
