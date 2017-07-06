@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            background: wheat;
+        }
+
+        #div1 {
+            width: 20px;
+            height: 50px;
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <!--<div id="div2"></div>-->
+    <script>
+        var div = document.querySelector("#div1")
+        var index = 20;
+        var timer;
+        var second = 0.01
+
+
+
+        function test() {
+            var start = +new Date();
+            while (start + second * 1000 > (+new Date())) {}
+            clearTimeout(timer)
+            index += 15
+            div.style.width = index + 'px'
+            // div.style.height = index + 'px'
+            if (index >= 1000) {
+                index = 50
+            } else {
+                timer = setTimeout(test, 4)
+            }
+
+        }
+
+        function requestOffSet() {
+            div.style.width = 50 + 'px'
+            console.log(div.clientWidth)
+            div.style.height = 60 + 'px'
+            console.log(div.clientWidth)
+            div.style.width = 70 + 'px'
+            console.log(div.clientWidth)
+            div.style.height = 80 + 'px'
+            console.log(div.clientWidth)
+            div.style.height = 90 + 'px'
+            console.log(div.clientWidth)
+            div.style.height = 100 + 'px'
+            console.log(div.clientWidth)
+            div.style.height = 200 + 'px'
+            console.log(div.clientWidth)
+        }
+
+        function requestOffSet2() {
+            div.style.width = 150 + 'px'
+            console.log(div.clientWidth)
+            div.style.height = 160 + 'px'
+            console.log(div.clientWidth)
+            div.style.width = 170 + 'px'
+            console.log(div.clientWidth)
+            div.style.height = 180 + 'px'
+            console.log(div.clientWidth)
+            div.style.height = 190 + 'px'
+            console.log(div.clientWidth)
+            div.style.height = 300 + 'px'
+            console.log(div.clientWidth)
+            div.style.height = 400 + 'px'
+            console.log(div.clientWidth)
+        }
+        requestAnimationFrame(requestOffSet)
+        timer = setTimeout(requestOffSet2, 100)
+    </script>
+</body>
+
+</html>
